@@ -1,5 +1,5 @@
 {
-  "name": "redux-2",
+  "name": "combine-reducer",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -9,9 +9,7 @@
   },
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-redux": "^8.0.2",
-    "redux": "^4.2.0"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

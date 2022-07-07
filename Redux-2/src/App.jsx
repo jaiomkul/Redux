@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { store } from "./Redux/store";
 import "./App.css";
+import { addCount } from "./Redux/action";
+import { useDispatch, useSelector } from "react-redux";
+import { Counter } from "./Components/Counter/Counter";
+import { Todos } from "./Components/Todos/Todos";
 
 function App() {
-  const state = store.getState();
+  const dispatch = useDispatch();
+  const counter = useSelector((store) => store.counter);
 
   return (
     <div className="App">
-      <h1>Counter: 0</h1>
-      <button>Add</button>
-      <button>Sub</button>
+      <Counter></Counter>
+      <Todos></Todos>
     </div>
   );
 }

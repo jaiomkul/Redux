@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../../Redux/action";
+import { addTodo } from "../../Redux/Todos/action";
 
 export const Todos = () => {
-  const todos = useSelector((store) => store.todos);
+  const todos = useSelector((store) => store.todos.todos);
   const dispatch = useDispatch();
   const handelAdd = () => {
     dispatch(

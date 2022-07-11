@@ -1,7 +1,16 @@
-import { legacy_createStore as createStore } from "redux";
-import { couterReducer } from "./reducer";
+import { legacy_createStore as createStore, combineReducers } from "redux";
+import { couterReducer } from "./Counter/reducer";
+import { todoReducer } from "./Todos/reducer";
 
-export const store = createStore(couterReducer, { counter: 0, todos: [] });
+const rootReducer = combineReducers({
+  counter: couterReducer,
+  todos: todoReducer,
+});
+
+export const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 store.subscribe(() => {
   console.log("Store", store.getState());

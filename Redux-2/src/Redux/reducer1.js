@@ -1,6 +1,7 @@
-import { ADD_COUNT, ADD_TODO } from "./action";
+import { ADD_COUNT, ADD_TODO } from "./action1";
 
-export const couterReducer = (store, { type, payload }) => {
+const init = { counter: 0, todos: [] };
+export const couterReducer = (store = init, { type, payload }) => {
   switch (type) {
     case ADD_COUNT:
       return { ...store, counter: store.counter + payload };
